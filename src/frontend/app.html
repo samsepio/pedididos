@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="author"content="walter">
+		<title>Sistema De Pedidos</title>
+		<link rel="stylesheet"href="./css/main.css">
+		<script src="/socket.io/socket.io.js"charset="utf-8"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body>
+		<nav class="navbar navbar-dark bg-dark">
+  			<a class="navbar-brand" href="#">
+    			<img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+			Sistema De Pedidos
+  			</a>
+		</nav>
+		<br>
+		<nav class="navbar navbar-dark bg-primary">
+  			<span class="navbar-brand mb-0 h1 mx-auto">Portatiles</span>
+			<input type="text"autocomplete="off"class="form-control mr-sm-2 mx-auto"id="portatiles"placeholder="Numero De Portatiles">
+			<br>
+			<button class="btn btn-success mx-auto"id="pedirA">Pedir</button>
+		</nav>
+		<br>
+		<nav class="navbar navbar-dark bg-primary">
+                        <span class="navbar-brand mb-0 h1 ">Sala Audiovisuales</span>
+                        <button class="btn btn-success "id="pedirB">Pedir</button>
+                </nav>
+		<br>
+		<nav class="navbar navbar-dark bg-primary">
+                        <span class="navbar-brand mb-0 h1">Sala Informatica</span>
+                        <button class="btn btn-success "id="pedirC">Pedir</button>
+                </nav>
+		<br>
+		<nav class="navbar navbar-dark bg-primary">
+                        <span class="navbar-brand mb-0 h1 mx-auto">Parlantes</span>
+                        <input type="text"autocomplete="off"class="form-control mr-sm-2 mx-auto"id="parlantes"placeholder="Numero De Parlantes">
+                        <br>
+                        <button class="btn btn-success mx-auto"id="pedirD">Pedir</button>
+                </nav>
+		<br>
+		 <nav class="navbar navbar-dark bg-primary">
+                        <span class="navbar-brand mb-0 h1">Video Beam</span>
+                        <button class="btn btn-success"id="pedirE">Pedir</button>
+                </nav>
+		<script src="./js/app.js"charset="utf-8"></script>
+	</body>
+</html>
