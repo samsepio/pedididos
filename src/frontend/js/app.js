@@ -11,6 +11,11 @@ let mensajeA=document.getElementById('mensajeA');
 let mensajeB=document.getElementById('mensajeB');
 
 pedirA.addEventListener('click',(evento)=>{
+	if(portatiles.value==""){
+		mensajeA.innerHTML+=`no puede dejar este campo en blanco es obligatorio`
+		mensajeA.style.color="red";
+		return false();
+	};
 	if(portatiles.value > 4){
 		alert('el numero de portatiles a pedir no puede ser mayor a 4');
 		return false();
@@ -37,8 +42,13 @@ pedirC.addEventListener('click',(evento)=>{
 	socket.emit('pedirC');
 });
 pedirD.addEventListener('click',(evento)=>{
+	if(parlantes.value==""){
+		mensajeB.innerHTML+=`no puede dejar este campo en blanco es hobligatorio`
+		mensajeB.style.color="red";
+		return false();
+	};
 	if(parlantes.value > 4){
-		alert('no pueds pedir mas de 4 parlantes');
+		alert('no puedeees pedir mas de 4 parlantes');
 		return false();
 	};
 	if(parlantes.value=="0"){
