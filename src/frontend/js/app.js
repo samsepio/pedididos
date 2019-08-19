@@ -7,6 +7,8 @@ let pedirD=document.getElementById('pedirD');
 let pedirE=document.getElementById('pedirE');
 let portatiles=document.getElementById('portatiles');
 let parlantes=document.getElementById('parlantes');
+let mensajeA=document.getElementById('mensajeA');
+let mensajeB=document.getElementById('mensajeB');
 
 pedirA.addEventListener('click',(evento)=>{
 	if(portatiles.value > 4){
@@ -15,6 +17,9 @@ pedirA.addEventListener('click',(evento)=>{
 	};
 	alert('recuerda que tienes que entregar el equipo solicitado en dos horas');
 	pedirA.style.color="red";
+	portatiles.style.background="red";
+	mensajeA.innerHTML+=`los portatieles ya an sido pedididos`
+	mensajeA.style.color="red";
 	socket.emit('pedirA');
 });
 pedirB.addEventListener('click',(evento)=>{
@@ -34,6 +39,9 @@ pedirD.addEventListener('click',(evento)=>{
 	};
 	alert('recuerda que tienes que entregar el equipo solicitado en dos horas');
 	pedirD.style.color="red";
+	parlantes.style.background="red";
+	mensajeB.innerHTML+=`los parlantes ya an sido pedidos`
+	mensajeB.style.color="red";
 	socket.emit('pedirD');
 });
 pedirE.addEventListener('click',(evento)=>{
