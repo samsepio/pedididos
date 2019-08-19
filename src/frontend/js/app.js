@@ -9,6 +9,7 @@ let portatiles=document.getElementById('portatiles');
 let parlantes=document.getElementById('parlantes');
 let mensajeA=document.getElementById('mensajeA');
 let mensajeB=document.getElementById('mensajeB');
+let numero=document.getElementById('numero');
 
 pedirA.addEventListener('click',(evento)=>{
 	if(portatiles.value==""){
@@ -17,19 +18,29 @@ pedirA.addEventListener('click',(evento)=>{
 		return false();
 	};
 	if(portatiles.value > 4){
-		alert('el numero de portatiles a pedir no puede ser mayor a 4');
+		mensajeA.innerHTML+=` no puede pedir mas de 4 portatieles`
+		mensajeA.style.color="red"
 		return false();
 	};
 	if(portatiles.value=="0"){
-		alert('no puede pedeir 0 portatiles');
+		mensajeA.innerHTML+=`el numero de portatiles a pedir no puede ser cero`
+		mensajeA.style.color="red";
 		return false();
 	};
 	alert('recuerda que tienes que entregar el equipo solicitado en dos horas');
 	pedirA.style.color="red";
 	portatiles.style.background="red";
-	mensajeA.innerHTML+=`los portatieles ya an sido pedididos`
-	mensajeA.style.color="red";
-	socket.emit('pedirA');
+	socket.emit('pedirA',{
+		mensaje: mensajeA.value
+	});
+	socket.on('mensaje',(data)=>{
+		mensajeA.innerHTML+=`<p>numero de portatiles pedidos ${portatiles.value}</p>`
+		mensajeA.style.color="blue"
+		if(portatiles >= 32){
+			mensajeA.innerHTML+=`todos los portatiles se han pedido`
+			mensajeA.setyle.color="red"
+		};
+	});
 });
 pedirB.addEventListener('click',(evento)=>{
 	alert('recuerda que tienes que entregar el equipo solicitado en dos horas');
@@ -48,11 +59,13 @@ pedirD.addEventListener('click',(evento)=>{
 		return false();
 	};
 	if(parlantes.value > 4){
-		alert('no puedeees pedir mas de 4 parlantes');
+		mensajeB.innerHTML+=`el numero de parlantes neo puede ser mayor a 4`
+		mensajeB.styele.color="red";
 		return false();
 	};
 	if(parlantes.value=="0"){
-		alert('no puedes pedir 0 parlantes');
+		mensajeB.innerHTML+=`el numero de parlaneted neo puede ser cero`
+		mensajeB.style.color="red";
 		return false();
 	};
 	alert('recuerda que tienes que entregar el equipo solicitado en dos horas');

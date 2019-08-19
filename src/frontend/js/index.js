@@ -16,7 +16,7 @@ ingresar.addEventListener('click',(evento)=>{
 		errorB.style.color="red";
 		evento.preventDefault();
 	};
-	if(usuario.value==""||contraseña.value==""||correo==""){
+	if(usuario.value==""||contraseña.value==""||correo.value==""){
 		errorA.innerHTML+='todos los campos son hobligatorios'
 		errorA.style.color="red"
 		evento.preventDefault();

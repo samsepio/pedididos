@@ -63,8 +63,9 @@ io.on('connect',(socket)=>{
                         }
 		});
 	});
-	socket.on('pedirA',()=>{
+	socket.on('pedirA',(data)=>{
 		console.log(`se han pedido los portatiles hora:${new Date}`);
+		io.sockets.emit('mensaje',data);
 	});
 	socket.on('pedirB',()=>{
 		console.log(`se han pedido la sala de audio visuales hora${new Date}`);
