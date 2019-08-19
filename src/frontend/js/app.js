@@ -15,6 +15,10 @@ pedirA.addEventListener('click',(evento)=>{
 		alert('el numero de portatiles a pedir no puede ser mayor a 4');
 		return false();
 	};
+	if(portatiles.value=="0"){
+		alert('no puede pedeir 0 portatiles');
+		return false();
+	};
 	alert('recuerda que tienes que entregar el equipo solicitado en dos horas');
 	pedirA.style.color="red";
 	portatiles.style.background="red";
@@ -35,6 +39,10 @@ pedirC.addEventListener('click',(evento)=>{
 pedirD.addEventListener('click',(evento)=>{
 	if(parlantes.value > 4){
 		alert('no pueds pedir mas de 4 parlantes');
+		return false();
+	};
+	if(parlantes.value=="0"){
+		alert('no puedes pedir 0 parlantes');
 		return false();
 	};
 	alert('recuerda que tienes que entregar el equipo solicitado en dos horas');
