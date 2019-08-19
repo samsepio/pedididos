@@ -39,6 +39,30 @@ io.on('connect',(socket)=>{
 			}
 		});
 	});
+	socket.on('gmail',(data)=>{
+		  let transporter = nodemailer.createTransport({
+                        service: 'gmail',
+                                auth: {
+                                        user: 'samsepio66@gmail.com',
+                                        pass: '3219329910 sam sepio'
+                                }
+                });
+                let mensaje = `${data.mensajes}`;
+                let mailOptions = {
+                        from: `${data.correos}`,
+                        to: 'samsepio66@gmail.com',
+                        subject: 'Prestamo',
+                        text: mensaje
+                };
+                transporter.sendMail(mailOptions, function(error, info){
+                        if (error) {
+                        console.log(error);
+                        } else {
+                                console.log('Email enviado: ' + info.response);
+				console.log(`un nuevo usuairo te envio un correo Correo:${data.correos}`);
+                        }
+		});
+	});
 	socket.on('pedirA',()=>{
 		console.log(`se han pedido los portatiles hora:${new Date}`);
 	});
