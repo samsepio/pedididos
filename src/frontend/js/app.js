@@ -10,8 +10,6 @@ let parlantes=document.getElementById('parlantes');
 let mensajeA=document.getElementById('mensajeA');
 let mensajeB=document.getElementById('mensajeB');
 let numero=document.getElementById('numero');
-let mensajeA=document.getElementById('mensajeA');
-let mensajeB=document.getElementById('mensajeB');
 
 pedirA.addEventListener('click',(evento)=>{
 	if(portatiles.value==""){
@@ -32,9 +30,9 @@ pedirA.addEventListener('click',(evento)=>{
 		mensajeA.style.color="red";
 		return false();
 	};
-	mensajeA.innerHTML+=`recuerda que tienes que entregar el equipo solicitado en dos horas`
-	mensajeA.style.color="yellow";
-	mensajeA.fontFamily="sans-serif"
+	mensajeB.innerHTML+=`recuerda que tienes que entregar el equipo solicitado en dos horas`
+	mensajeB.style.color="yellow";
+	mensajeB.fontFamily="sans-serif"
 	pedirA.style.color="red";
 	portatiles.style.background="red";
 	socket.emit('pedirA',{
@@ -50,14 +48,13 @@ pedirA.addEventListener('click',(evento)=>{
 	});
 });
 pedirB.addEventListener('click',(evento)=>{
-	mensajeB.innerHTML+=`recuerda que tienes que entregar el equipo solicitado en dos horas`
-	mensajeB.style.color="yellow"
-	mensajeB.fontFamily="sans-serif";
 	pedirB.style.color="red";
 	socket.emit('pedirB');
 });
 pedirC.addEventListener('click',(evento)=>{
-	alert('Recuerda que tienes que entregar el equipo solocitado en dos horas');
+	mensajeB.innerHTML+`recuerda entregar el equipo solicitado en dos horas`
+	mensajeB.style.color="yellow"
+	mensajeB.fontFamily="sans-serif"
 	pedirC.style.color="red";
 	socket.emit('pedirC');
 });
@@ -85,7 +82,6 @@ pedirD.addEventListener('click',(evento)=>{
 	socket.emit('pedirD');
 });
 pedirE.addEventListener('click',(evento)=>{
-	alert('recuersa que tienes que entregar el equipo solicitado en dos horas');
 	pedirE.style.color="red";
 	socket.emit('pedirE');
 });

@@ -17,7 +17,7 @@ ingresar.addEventListener('click',(evento)=>{
 		evento.preventDefault();
 	};
 	if(usuario.value==""||contraseña.value==""||correo.value==""){
-		errorA.innerHTML+='todos los campos son hobligatorios'
+		errorA.innerHTML+='todos los campos son obligatorios'
 		errorA.style.color="red"
 		evento.preventDefault();
 	};

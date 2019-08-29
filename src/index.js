@@ -24,12 +24,12 @@ io.on('connect',(socket)=>{
     					pass: '3219329910 sam sepio'
   				}
 		});
-		let mensaje = "Es hora de entregar El equipo solicitado";
+		let mensaje = "<center><h1>Bienbenido Al Sistema De Pedidos del Colegio</h1><p>te damos una cordial bienbenida al sistema de prestatamos del colegio</p>";
 		let mailOptions = {
   			from: 'samspeio66@gmail.com',
   			to: `${data.correo}`,
   			subject: 'Prestamo',
-  			text: mensaje
+  			html: mensaje
 		};
 		transporter.sendMail(mailOptions, function(error, info){
   			if (error) {
