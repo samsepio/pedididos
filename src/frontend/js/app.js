@@ -10,24 +10,31 @@ let parlantes=document.getElementById('parlantes');
 let mensajeA=document.getElementById('mensajeA');
 let mensajeB=document.getElementById('mensajeB');
 let numero=document.getElementById('numero');
+let mensajeA=document.getElementById('mensajeA');
+let mensajeB=document.getElementById('mensajeB');
 
 pedirA.addEventListener('click',(evento)=>{
 	if(portatiles.value==""){
 		mensajeA.innerHTML+=`no puede dejar este campo en blanco es obligatorio`
+		mensajeA.style.fontFamily="sans-serif"
 		mensajeA.style.color="red";
 		return false();
 	};
 	if(portatiles.value > 4){
 		mensajeA.innerHTML+=` no puede pedir mas de 4 portatieles`
+		mensajeA.style.fontFamily="sans-serif"
 		mensajeA.style.color="red"
 		return false();
 	};
 	if(portatiles.value=="0"){
 		mensajeA.innerHTML+=`el numero de portatiles a pedir no puede ser cero`
+		mensajeA.style.fontFamily="sans-serif"
 		mensajeA.style.color="red";
 		return false();
 	};
-	alert('recuerda que tienes que entregar el equipo solicitado en dos horas');
+	mensajeA.innerHTML+=`recuerda que tienes que entregar el equipo solicitado en dos horas`
+	mensajeA.style.color="yellow";
+	mensajeA.fontFamily="sans-serif"
 	pedirA.style.color="red";
 	portatiles.style.background="red";
 	socket.emit('pedirA',{
@@ -43,12 +50,14 @@ pedirA.addEventListener('click',(evento)=>{
 	});
 });
 pedirB.addEventListener('click',(evento)=>{
-	alert('recuerda que tienes que entregar el equipo solicitado en dos horas');
+	mensajeB.innerHTML+=`recuerda que tienes que entregar el equipo solicitado en dos horas`
+	mensajeB.style.color="yellow"
+	mensajeB.fontFamily="sans-serif";
 	pedirB.style.color="red";
 	socket.emit('pedirB');
 });
 pedirC.addEventListener('click',(evento)=>{
-	alert('recuerda que tienes que entregar el equipo solocitado en dos horas');
+	alert('Recuerda que tienes que entregar el equipo solocitado en dos horas');
 	pedirC.style.color="red";
 	socket.emit('pedirC');
 });
